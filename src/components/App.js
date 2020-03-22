@@ -1,6 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { handleInitialData } from '../actions/shared'
+import { LoadingBar } from 'react-redux-loading'
+import QuestionList from './QuestionList'
+import Nav from './Nav'
 
 class App extends Component {
   componentDidMount() {
@@ -9,7 +13,17 @@ class App extends Component {
 
   render() {
     return (
-      <div>Hello</div>
+      <Router>
+        <Fragment>
+          <LoadingBar/>
+          <div className='container'>
+            <Nav/>
+            <QuestionList/>
+          </div>
+          
+        </Fragment>
+      </Router>
+      
     )
   }
 
