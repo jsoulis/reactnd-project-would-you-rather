@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, withRouter} from 'react-router-dom'
 
 
 class QuestionSummary extends Component {
@@ -32,13 +32,17 @@ class QuestionSummary extends Component {
         
         return (
             <div className='question'>
-                <div>
-                    <span>{`${name} asks...`}</span>
-                    <img
-                        src={avatarURL}
-                        alt={`Avatar of ${name}`}
-                        className='avatar'
-                    />
+               <div>
+                    <div>
+                        <span>{`${name} asks...`}</span>
+                    </div>
+                    <div>
+                        <img
+                            src={avatarURL}
+                            alt={`Avatar of ${name}`}
+                            className='avatar'
+                        />
+                    </div> 
                 </div>
                 <div className='question-info'>
                     <div>
@@ -67,4 +71,4 @@ function mapStateToProps({ questions, users, authedUser }, { id }) {
     }
 }
 
-export default connect(mapStateToProps)(QuestionSummary)
+export default withRouter(connect(mapStateToProps)(QuestionSummary))

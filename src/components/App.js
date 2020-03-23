@@ -5,6 +5,7 @@ import { handleInitialData } from '../actions/shared'
 import { LoadingBar } from 'react-redux-loading'
 import QuestionList from './QuestionList'
 import Nav from './Nav'
+import Question from './Question'
 
 class App extends Component {
   componentDidMount() {
@@ -18,7 +19,12 @@ class App extends Component {
           <LoadingBar/>
           <div className='container'>
             <Nav/>
-            <QuestionList/>
+            {this.props.loading === true 
+              ? null
+              : <div>
+                <Route path='/' exact component={QuestionList}/>
+                <Route path='/question/:id' component={Question}/>  
+              </div>}
           </div>
           
         </Fragment>
