@@ -1,18 +1,18 @@
-import Login from "../components/Login"
+import Login from "../components/Login";
 
-export const SET_AUTHED_USER = 'SET_AUTHED_USER'
-export const LOGOUT = 'LOGOUT'
+export const SET_AUTHED_USER = "SET_AUTHED_USER";
+export const LOGOUT = "LOGOUT";
 
-export function setAuthedUser (id) {
-    return {
-        type: SET_AUTHED_USER,
-        id,
-    }
+export function setAuthedUser(id) {
+  return {
+    type: SET_AUTHED_USER,
+    id
+  };
 }
 
-export function logoutUser () {
-    return {
-        type: LOGOUT,
-        id: null
-    }
+export function logoutUser() {
+  return {
+    type: LOGOUT,
+    id: null
+  };
 }

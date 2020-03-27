@@ -8,7 +8,6 @@
   font-weight: bold;
 }
 
-
 .nav ul {
   display: flex;
   flex-direction: row;
@@ -41,7 +40,7 @@ li {
   text-transform: uppercase;
   margin: 35px auto;
   padding: 10px;
-  border: 1px solid rgba(0,0,0,.29);
+  border: 1px solid rgba(0, 0, 0, 0.29);
   cursor: pointer;
   background: #fff;
   font-size: 16px;
@@ -50,7 +49,7 @@ li {
 }
 
 .btn:hover {
-  border-color: rgba(0,0,0,.5);
+  border-color: rgba(0, 0, 0, 0.5);
   text-decoration: none;
 }
 
@@ -116,7 +115,7 @@ li {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 10px
+  margin: 10px;
 }
 
 .question-summary-box {
@@ -153,5 +152,4 @@ li {
 
 .results {
   margin: 10px;
-  
 }
