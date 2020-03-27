@@ -20,6 +20,7 @@ export function handleInitialData () {
 }
 
 export function handleAnswerQuestion (info) {
+    console.log('handleAnswerQuestion is called')
     return (dispatch) => {
         dispatch(showLoading())
         return saveQuestionAnswer(info)

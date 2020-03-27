@@ -9,6 +9,7 @@ export default function questions (state = {}, action) {
                 ...action.questions
             };
         case SAVE_ANSWER: 
+            console.log('SAVE_ANSWER: question reducer')
             return {
                 ...state,
                 [action.qid]: {

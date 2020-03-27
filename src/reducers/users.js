@@ -1,4 +1,4 @@
-import { RECEIVE_USERS, SAVE_ANSWER } from '../actions/users'
+import { RECEIVE_USERS, SAVE_ANSWER_USER } from '../actions/users'
 
 export default function users (state = {}, action) {
     switch(action.type) {
@@ -7,7 +7,8 @@ export default function users (state = {}, action) {
                 ...state,
                 ...action.users
             };
-        case SAVE_ANSWER:
+        case SAVE_ANSWER_USER:
+            console.log('SAVE_ANSWER: user reducer')
             return {
                 ...state,
                 [action.authedUser]: {

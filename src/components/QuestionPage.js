@@ -30,6 +30,8 @@ class QuestionPage extends Component {
 
         const { dispatch, qid, authedUser } = this.props;
 
+        console.log('Handle Submit')
+
         this.setState(() => ({
             isAnswered: true
         }), () => {

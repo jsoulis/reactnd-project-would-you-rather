@@ -1,5 +1,5 @@
 export const RECEIVE_USERS = 'RECEIVE_USERS'
-export const SAVE_ANSWER = 'SAVE_ANSWER'
+export const SAVE_ANSWER_USER = 'SAVE_ANSWER_USER'
 
 export function receiveUsers (users) {
     return {
@@ -10,7 +10,7 @@ export function receiveUsers (users) {
 
 export function userAnswer ({ authedUser, qid, answer }) {
     return {
-        type: SAVE_ANSWER,
+        type: SAVE_ANSWER_USER,
         qid,
         answer,
         authedUser
