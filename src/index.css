@@ -153,3 +153,12 @@ li {
 .results {
   margin: 10px;
 }
+
+.bold {
+  font-weight: bold;
+}
+
+.results-blue {
+  color: blue;
+  margin: 10px;
+}

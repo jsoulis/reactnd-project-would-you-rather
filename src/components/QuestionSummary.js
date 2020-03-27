@@ -29,9 +29,6 @@ class QuestionSummary extends Component {
 
     const { name, avatarURL } = user;
     const { id } = question;
-    const text = question.optionOne.text;
-
-    const textSummary = this.formatText(text);
 
     return (
       <div className="question-summary-box">
@@ -50,8 +47,9 @@ class QuestionSummary extends Component {
           </div>
           <div className="question-summary-info">
             <div>
-              <span>Would you Rather</span>
-              <p>{textSummary}</p>
+              <span className="bold">Would you Rather</span>
+              <p>{question.optionOne.text}</p>
+              <p>{question.optionTwo.text}</p>
             </div>
           </div>
         </div>

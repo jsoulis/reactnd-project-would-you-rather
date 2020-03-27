@@ -11,6 +11,7 @@ class Nav extends Component {
   };
 
   render() {
+    const { name } = this.props;
     return (
       <nav className="nav">
         <ul>
@@ -38,10 +39,17 @@ class Nav extends Component {
               Logout
             </NavLink>
           </li>
+          <li>{`Hello, ${name}`}</li>
         </ul>
       </nav>
     );
   }
 }
 
-export default connect()(Nav);
+function mapStateToProps({ authedUser, users }) {
+  return {
+    name: users[authedUser].name
+  };
+}
+
+export default connect(mapStateToProps)(Nav);

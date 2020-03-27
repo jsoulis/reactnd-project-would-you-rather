@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { handleNewQuestion } from "../actions/shared";
+import { Redirect } from "react-router-dom";
 
 class NewQuestion extends Component {
   constructor(props) {
     super(props);
     this.state = {
       optionOneText: "",
-      optionTwoText: ""
+      optionTwoText: "",
+      submit: false
     };
   }
 
@@ -34,7 +36,9 @@ class NewQuestion extends Component {
     const { dispatch, author } = this.props;
 
     dispatch(handleNewQuestion({ optionOneText, optionTwoText, author }));
-
+    this.setState(() => ({
+      submit: true
+    }));
     this.setState(() => ({
       optionOneText: "",
       optionTwoText: ""
@@ -42,7 +46,10 @@ class NewQuestion extends Component {
   };
 
   render() {
-    const { optionOneText, optionTwoText } = this.state;
+    const { optionOneText, optionTwoText, submit } = this.state;
+    if (submit === true) {
+      return <Redirect to="/" />;
+    }
     return (
       <div className="center">
         <h3>Create New Question</h3>
