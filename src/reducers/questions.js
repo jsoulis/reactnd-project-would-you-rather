@@ -1,4 +1,4 @@
-import { RECEIVE_QUESTIONS, SAVE_ANSWER } from '../actions/questions'
+import { RECEIVE_QUESTIONS, SAVE_ANSWER, NEW_QUESTION } from '../actions/questions'
 
 
 export default function questions (state = {}, action) {
@@ -9,7 +9,6 @@ export default function questions (state = {}, action) {
                 ...action.questions
             };
         case SAVE_ANSWER: 
-            console.log('SAVE_ANSWER: question reducer')
             return {
                 ...state,
                 [action.qid]: {
@@ -19,6 +18,11 @@ export default function questions (state = {}, action) {
                         votes: state[action.qid][action.answer].votes.concat([action.authedUser])
                     }
                 }
+            }
+        case NEW_QUESTION:
+            return {
+                ...state,
+                [action.question.id] : action.question
             }
         default:
             return state;

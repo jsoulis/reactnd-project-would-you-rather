@@ -1,8 +1,6 @@
-import { saveQuestion, saveQuestionAnswer } from '../utils/api'
-import { showLoading, hideLoading } from 'react-redux-loading'
-
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 export const SAVE_ANSWER = 'SAVE_ANSWER'
+export const NEW_QUESTION = 'NEW_QUESTION'
 
 export function receiveQuestions (questions) {
     return {
@@ -20,3 +18,9 @@ export function questionAnswer ({ authedUser, qid, answer }) {
     }
 }
 
+export function newQuestion (question) {
+    return {
+        type: NEW_QUESTION,
+        question
+    }
+}
