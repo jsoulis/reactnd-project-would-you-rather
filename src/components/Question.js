@@ -44,6 +44,8 @@ class Question extends Component {
                             />
                             {q1}
                         </label>
+                    </div>
+                    <div>
                         <label>
                             <input
                             type="radio"

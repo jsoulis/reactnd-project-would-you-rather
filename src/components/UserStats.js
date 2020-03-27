@@ -16,14 +16,16 @@ class UserStats extends Component {
                         alt={`Avatar of ${name}`}
                         className='avatar'
                     />
+                </div>
+                <div className='allign-text-right'>
                     <p>{name}</p>
                     <div>
                         <p>{`Answered questions: ${numAnswered}`}</p>
                         <p>{`Created questions: ${numAuthored}`}</p>
                     </div>
-                    <div>
-                        <p>{`Score: ${score}`}</p>
-                    </div>
+                </div>
+                <div className='score'>
+                    <p>{`Score: ${score}`}</p>
                 </div> 
             </div>
         )

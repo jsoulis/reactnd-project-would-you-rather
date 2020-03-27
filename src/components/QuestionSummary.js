@@ -31,29 +31,33 @@ class QuestionSummary extends Component {
         const textSummary = this.formatText(text);
         
         return (
-            <div className='question'>
-               <div>
-                    <div>
-                        <span>{`${name} asks...`}</span>
+            <div className='question-summary-box'>
+                <div className='question-summary'>
+                    <div className='avatar-summary'>
+                        <div>
+                            <span>{`${name} asks...`}</span>
+                        </div>
+                        <div>
+                            <img
+                                src={avatarURL}
+                                alt={`Avatar of ${name}`}
+                                className='avatar'
+                            />
+                        </div> 
                     </div>
-                    <div>
-                        <img
-                            src={avatarURL}
-                            alt={`Avatar of ${name}`}
-                            className='avatar'
-                        />
-                    </div> 
+                    <div className='question-summary-info'>
+                        <div>
+                            <span>Would you Rather</span>
+                            <p>{textSummary}</p>
+                        </div>
+                    </div>
                 </div>
-                <div className='question-info'>
-                    <div>
-                        <span>Would you Rather</span>
-                        <p>{textSummary}</p>
-                        <Link to={`/question/${id}`}>
-                            <button className='btn' type='submit'>
-                                View Poll
-                            </button>
-                        </Link>
-                    </div>
+                <div className='question-summary'>
+                    <Link to={`/question/${id}`}>
+                        <button className='btn' type='submit'>
+                                    View Poll
+                        </button>
+                    </Link>
                 </div>
             </div>
         )

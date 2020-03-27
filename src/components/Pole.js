@@ -23,8 +23,6 @@ class Pole extends Component {
         <div className='question'>
             <div>
                 <span>{`Asked by ${name}`}</span>
-            </div>
-            <div>
                 <div>
                     <img
                         src={avatarURL}
@@ -33,14 +31,15 @@ class Pole extends Component {
                     />
                 </div> 
             </div>
-            <div className='question-info'>
+            <div>
+            </div>
+            <div className='pole-card'>
                 <div className='pole-card'>
-                    <p>Results:</p>
-                    <div>
+                    <div className='results'>
                         <span>{q1}</span>
                         <p>{`${q1Votes} out of ${totalVotes}`}</p>
                     </div>
-                    <div>
+                    <div className='results'>
                         <span>{q2}</span>
                         <p>{`${q2Votes} out of ${totalVotes}`}</p>
                     </div>

@@ -25,7 +25,7 @@ class App extends Component {
             {this.props.loading === true 
               ? null
               : <div>
-                <Route path='/' exact component={QuestionList}/>
+                <div className='center'><Route path='/' exact component={QuestionList}/></div>
                 <Route path='/question/:id' component={QuestionPage}/>
                 <Route path='/leadership' component={LeaderBoard}/>
                 <Route path='/add' component={NewQuestion}/>  

@@ -32,7 +32,7 @@ class QuestionList extends Component {
         const { unansweredIds, answeredIds} = this.props;
 
         return (
-            <div>
+            <div className='center-adjusted'>
                 <div className='center'>
                     <button
                         className='btn'
