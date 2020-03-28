@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { handleAnswerQuestion } from "../actions/shared";
 import Question from "./Question";
 import Pole from "./Pole";
+import { Redirect } from "react-router-dom";
 
 class QuestionPage extends Component {
   constructor(props) {
@@ -56,12 +57,15 @@ class QuestionPage extends Component {
   };
 
   render() {
-    const { qid } = this.props;
+    const { qid, question } = this.props;
     const isAnswered = this.state.isAnswered;
+    console.log(`Value of Question: ${question}`)
 
     return (
       <Fragment>
-        {isAnswered ? (
+        {!question ? (
+          <h1>404 Page Could Not Be Found</h1>
+        ) : isAnswered ? (
           <Pole qid={qid} />
         ) : (
           <Question
@@ -78,7 +82,8 @@ class QuestionPage extends Component {
 function mapStateToProps({ questions, users, authedUser }, props) {
   const { id } = props.match.params;
   const question = questions[id];
-  const user = users[question.author];
+
+  const user = question ? users[question.author] : null;
   const answered = Object.keys(users[authedUser].answers);
   const status = answered.includes(id);
 
